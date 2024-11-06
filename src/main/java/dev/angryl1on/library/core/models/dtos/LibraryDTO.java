@@ -25,7 +25,6 @@ public class LibraryDTO extends RepresentationModel<LibraryDTO> {
         this.id = id;
         this.name = name;
         this.address = address;
-
     }
 
     public UUID getId() {

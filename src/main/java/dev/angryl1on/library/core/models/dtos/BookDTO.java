@@ -29,6 +29,16 @@ public class BookDTO extends RepresentationModel<BookDTO> {
         this.library = library;
     }
 
+    public BookDTO(UUID id, String title, String author, String isbn, int publicationYear, boolean available, UUID libraryId) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publicationYear = publicationYear;
+        this.available = available;
+        this.libraryId = libraryId;
+    }
+
     public BookDTO(UUID id, String title, String author, String isbn, int publicationYear, boolean available) {
         this.id = id;
         this.title = title;

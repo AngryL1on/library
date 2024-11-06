@@ -1,9 +1,8 @@
 package dev.angryl1on.library.api.graphql.fetchers;
 
-import com.netflix.graphql.dgs.DgsComponent;
-import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
-import com.netflix.graphql.dgs.DgsQuery;
+import com.netflix.graphql.dgs.*;
 import dev.angryl1on.library.core.models.dtos.LibraryDTO;
+import dev.angryl1on.library.core.models.dtos.register.LibraryInput;
 import dev.angryl1on.library.core.services.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,17 +18,40 @@ public class LibraryFetcher {
         this.libraryService = libraryService;
     }
 
-    // Fetcher для получения библиотеки по ID
-    @DgsQuery(field = "libraryById")
-    public LibraryDTO getLibraryById(DgsDataFetchingEnvironment dfe) {
-        UUID id = dfe.getArgument("id");
-        return libraryService.getLibraryById(id);
+    @DgsMutation
+    public LibraryDTO addLibrary(@InputArgument(name = "library") LibraryInput libraryInput) {
+        LibraryDTO libraryDTO = new LibraryDTO();
+        libraryDTO.setName(libraryInput.getName());
+        libraryDTO.setAddress(libraryInput.getAddress());
+
+       libraryService.addLibrary(libraryDTO);
+
+       return libraryDTO;
     }
 
-    // Fetcher для получения всех библиотек
     @DgsQuery(field = "allLibraries")
     public List<LibraryDTO> getAllLibraries() {
         return libraryService.getAllLibraries();
     }
-}
 
+    @DgsQuery(field = "libraryById")
+    public LibraryDTO getLibraryById(@InputArgument(name = "id") UUID id) {
+        return libraryService.getLibraryById(id);
+    }
+
+    @DgsQuery(field = "librariesByName")
+    public List<LibraryDTO> getLibrariesByName(@InputArgument(name = "name") String name) {
+        return libraryService.getLibrariesByName(name);
+    }
+
+    @DgsQuery(field = "librariesByAddress")
+    public List<LibraryDTO> getLibrariesByAddress(@InputArgument(name = "address") String address) {
+        return libraryService.getLibrariesByAddress(address);
+    }
+
+    @DgsMutation
+    public Boolean deleteLibrary(@InputArgument(name = "id") UUID id) {
+        libraryService.deleteLibrary(id);
+        return true;
+    }
+}

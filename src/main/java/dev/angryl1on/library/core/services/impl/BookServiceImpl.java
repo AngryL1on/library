@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @Service
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
-    private LibraryRepository libraryRepository;
+    private final LibraryRepository libraryRepository;
     private final ModelMapper modelMapper;
 
     @Autowired
@@ -33,6 +33,7 @@ public class BookServiceImpl implements BookService {
     public BookDTO addBook(BookDTO bookDTO) {
         Book book = modelMapper.map(bookDTO, Book.class);
         Book savedBook = bookRepository.save(book);
+
         return modelMapper.map(savedBook, BookDTO.class);
     }
 
@@ -40,6 +41,7 @@ public class BookServiceImpl implements BookService {
     public BookDTO getBookById(UUID id) {
         Book book = bookRepository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException(id));
+
         return modelMapper.map(book, BookDTO.class);
     }
 

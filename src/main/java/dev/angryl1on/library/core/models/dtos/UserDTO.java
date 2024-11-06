@@ -10,17 +10,27 @@ public class UserDTO extends RepresentationModel<UserDTO> {
     private UUID id;
     private String name;
     private String email;
+    private String password;
     private UserRoles role;
     private List<BorrowingDTO> borrowings;
 
     public UserDTO() { /* Do nothing */ }
 
-    public UserDTO(UUID id, String name, String email, UserRoles role, List<BorrowingDTO> borrowings) {
+    public UserDTO(UUID id, String name, String email, String password, UserRoles role, List<BorrowingDTO> borrowings) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.password = password;
         this.role = role;
         this.borrowings = borrowings;
+    }
+
+    public UserDTO(UUID id, String name, String email, String password, UserRoles role) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = role;
     }
 
     public UserDTO(UUID id, String name, String email, UserRoles role) {
@@ -52,6 +62,14 @@ public class UserDTO extends RepresentationModel<UserDTO> {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public UserRoles getRole() {
