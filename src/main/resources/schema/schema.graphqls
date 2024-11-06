@@ -1,0 +1,55 @@
+type Query {
+    bookById(id: ID!): Book
+    allBooks: [Book]
+    userById(id: ID!): User
+    allUsers: [User]
+    borrowingById(id: ID!): Borrowing
+    allBorrowings: [Borrowing]
+    libraryById(id: ID!): Library
+    allLibraries: [Library]
+}
+
+type Mutation {
+    addBook(title: String!, author: String!, isbn: String!, publicationYear: Int!, available: Boolean!): Book
+    borrowBook(userId: ID!, bookId: ID!): Borrowing
+    returnBook(borrowingId: ID!): Borrowing
+    registerUser(name: String!, email: String!, role: UserRole!): User
+}
+
+type Book {
+    id: ID!
+    title: String!
+    author: String!
+    isbn: String!
+    publicationYear: Int!
+    available: Boolean!
+    library: Library
+}
+
+type Library {
+    id: ID!
+    name: String!
+    address: String!
+    books: [Book]
+}
+
+type Borrowing {
+    id: ID!
+    user: User!
+    book: Book!
+    borrowDate: String
+    returnDate: String
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    role: UserRole!
+    borrowings: [Borrowing]
+}
+
+enum UserRole {
+    USER
+    LIBRARIAN
+}
