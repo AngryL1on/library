@@ -15,7 +15,6 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
-
     private final BookService bookService;
     private final BookAssembler bookAssembler;
 

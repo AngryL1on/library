@@ -12,13 +12,9 @@ import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
 @RestController
 @RequestMapping("/api/borrowings")
 public class BorrowingController {
-
     private final BorrowingServiceImpl borrowingService;
     private final BorrowingAssembler borrowingAssembler;
 
