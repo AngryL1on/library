@@ -7,11 +7,8 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "borrowing")
 public class Borrowing extends Base {
-
     private User user;
-
     private Book book;
-
     private LocalDate borrowDate;
     private LocalDate returnDate;
 

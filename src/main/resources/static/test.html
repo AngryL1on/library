@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RabbitMQ WebSocket Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #messages {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        .message {
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .message:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+<h1>RabbitMQ WebSocket Test</h1>
+<div id="messages">
+    <p><em>Waiting for messages...</em></p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script>
+    // Connect to the WebSocket server
+    const socket = new SockJS('http://localhost:9000/ws');
+    const stompClient = Stomp.over(socket);
+
+    const messagesDiv = document.getElementById('messages');
+
+    // Function to append messages to the page
+    function appendMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message';
+        messageDiv.textContent = message;
+        messagesDiv.appendChild(messageDiv);
+
+        // Scroll to the bottom
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Connect to the WebSocket server
+    stompClient.connect({}, () => {
+        stompClient.subscribe('/topic/new-books', (message) => {
+            console.log('Received New Book Message:', message);
+            appendMessage(`New Book: ${message.body}`);
+        });
+        stompClient.subscribe('/topic/new-libraries', (message) => {
+            console.log('New Library:', message.body);
+        });
+    }, (error) => {
+        console.error('WebSocket connection error:', error);
+    });
+</script>
+</body>
+</html>

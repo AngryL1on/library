@@ -1,0 +1,23 @@
+{
+  "vhosts": [
+    { "name": "/" },
+    { "name": "vhost" }
+  ],
+  "queues": [
+    {
+      "name": "audit_logs_queue",
+      "vhost": "/",
+      "durable": true
+    },
+    {
+      "name": "new_books_queue",
+      "vhost": "/",
+      "durable": true
+    },
+    {
+      "name": "new_libraries_queue",
+      "vhost": "/",
+      "durable": true
+    }
+  ]
+}
