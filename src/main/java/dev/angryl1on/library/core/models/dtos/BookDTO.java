@@ -18,17 +18,6 @@ public class BookDTO extends RepresentationModel<BookDTO> {
 
     public BookDTO() { /* Do nothing */ }
 
-    public BookDTO(UUID id, String title, String author, String isbn, int publicationYear, boolean available, UUID libraryId, LibraryDTO library) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.publicationYear = publicationYear;
-        this.available = available;
-        this.libraryId = libraryId;
-        this.library = library;
-    }
-
     public BookDTO(UUID id, String title, String author, String isbn, int publicationYear, boolean available, UUID libraryId) {
         this.id = id;
         this.title = title;

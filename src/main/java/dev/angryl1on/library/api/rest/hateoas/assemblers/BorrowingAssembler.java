@@ -3,9 +3,9 @@ package dev.angryl1on.library.api.rest.hateoas.assemblers;
 import dev.angryl1on.library.api.rest.controllers.BookController;
 import dev.angryl1on.library.api.rest.controllers.BorrowingController;
 import dev.angryl1on.library.api.rest.controllers.UserController;
-import dev.angryl1on.library.core.models.dtos.BookDTO;
-import dev.angryl1on.library.core.models.dtos.BorrowingDTO;
-import dev.angryl1on.library.core.models.dtos.UserDTO;
+import dev.angryl1on.libraryapi.models.dtos.BookDTO;
+import dev.angryl1on.libraryapi.models.dtos.BorrowingDTO;
+import dev.angryl1on.libraryapi.models.dtos.UserDTO;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
 

@@ -1,9 +1,9 @@
 package dev.angryl1on.library.api.graphql.fetchers;
 
 import com.netflix.graphql.dgs.*;
-import dev.angryl1on.library.core.models.dtos.UserDTO;
+import dev.angryl1on.libraryapi.models.dtos.UserDTO;
 import dev.angryl1on.library.core.models.dtos.register.UserInput;
-import dev.angryl1on.library.core.models.entity.enums.UserRoles;
+import dev.angryl1on.libraryapi.models.entity.enums.UserRoles;
 import dev.angryl1on.library.core.services.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 

@@ -1,6 +1,6 @@
 package dev.angryl1on.library.core.services;
 
-import dev.angryl1on.library.core.models.dtos.BorrowingDTO;
+import dev.angryl1on.libraryapi.models.dtos.BorrowingDTO;
 
 import java.util.List;
 import java.util.UUID;

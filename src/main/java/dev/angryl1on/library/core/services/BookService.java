@@ -1,6 +1,6 @@
 package dev.angryl1on.library.core.services;
 
-import dev.angryl1on.library.core.models.dtos.BookDTO;
+import dev.angryl1on.libraryapi.models.dtos.BookDTO;
 
 import java.util.List;
 import java.util.UUID;

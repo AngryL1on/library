@@ -2,8 +2,8 @@ package dev.angryl1on.library.api.rest.hateoas.assemblers;
 
 import dev.angryl1on.library.api.rest.controllers.BookController;
 import dev.angryl1on.library.api.rest.controllers.LibraryController;
-import dev.angryl1on.library.core.models.dtos.BookDTO;
-import dev.angryl1on.library.core.models.dtos.LibraryDTO;
+import dev.angryl1on.libraryapi.models.dtos.BookDTO;
+import dev.angryl1on.libraryapi.models.dtos.LibraryDTO;
 import org.springframework.hateoas.server.mvc.RepresentationModelAssemblerSupport;
 import org.springframework.stereotype.Component;
 

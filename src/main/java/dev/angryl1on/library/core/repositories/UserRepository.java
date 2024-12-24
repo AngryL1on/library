@@ -1,7 +1,7 @@
 package dev.angryl1on.library.core.repositories;
 
 import dev.angryl1on.library.core.models.entity.User;
-import dev.angryl1on.library.core.models.entity.enums.UserRoles;
+import dev.angryl1on.libraryapi.models.entity.enums.UserRoles;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

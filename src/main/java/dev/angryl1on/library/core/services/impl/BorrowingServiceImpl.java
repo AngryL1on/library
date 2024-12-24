@@ -1,6 +1,6 @@
 package dev.angryl1on.library.core.services.impl;
 
-import dev.angryl1on.library.core.models.dtos.BorrowingDTO;
+import dev.angryl1on.libraryapi.models.dtos.BorrowingDTO;
 import dev.angryl1on.library.core.exceptions.BookNotFoundException;
 import dev.angryl1on.library.core.exceptions.BorrowingNotFoundByIdException;
 import dev.angryl1on.library.core.exceptions.BorrowingNotFoundException;

@@ -1,102 +1,101 @@
-type Query {
-    allBooks: [Book]
-    bookById(id: ID!): Book
-    booksByAuthor(author: String!): [Book]
-    booksByTitle(title: String!): [Book]
-    booksByPublicationYear(publicationYear: Int!): [Book]
-    booksByAvailability(available: Boolean!): [Book]
-
-    allUsers: [User]
-    userById(id: ID!): User
-    userByEmail(email: String!): User
-    usersByRole(role: UserRole!): [User]
-
-    allBorrowings: [Borrowing]
-    borrowingById(id: ID!): Borrowing
-    borrowingsByUser(userId: ID!): [Borrowing]
-    borrowingsByBook(bookId: ID!): [Borrowing]
-    borrowingsByActiveByUser(userId: ID!): [Borrowing]
-
-    allLibraries: [Library]
-    libraryById(id: ID!): Library
-    librariesByName(name: String!): [Library]
-    librariesByAddress(address: String!): [Library]
-
-}
-
-type Mutation {
-    addBook(book: BookInput!): Book
-    assignBookToLibrary(bookId: ID!, libraryId: ID!): Book
-    deleteBook(id: ID!): Boolean
-
-    registerUser(user: UserInput!): User
-    updateUser(id: ID!, user: UserInput!): User
-    deleteUser(id: ID!): Boolean
-
-    addLibrary(library: LibraryInput!): Library
-    updateLibrary(id: ID!, library: LibraryInput!): Library
-    deleteLibrary(id: ID!): Boolean
-
-    borrowBook(userId: ID!, bookId: ID!): Borrowing
-    returnBook(userId: ID!, bookId: ID!): Borrowing
-}
-
-input BookInput {
-    title: String!
-    author: String!
-    isbn: String!
-    publicationYear: Int!
-    available: Boolean!
-}
-
-input UserInput {
-    name: String!
-    email: String!
-    password: String!
-    role: UserRole!
-}
-
-input LibraryInput {
-    name: String!
-    address: String!
-}
-
-type Book {
-    id: ID!
-    title: String!
-    author: String!
-    isbn: String!
-    publicationYear: Int!
-    available: Boolean!
-    library: Library
-    borrowings: [Borrowing]
-}
-
-type User {
-    id: ID!
-    name: String!
-    email: String!
-    password: String!
-    role: UserRole!
-    borrowings: [Borrowing]
-}
-
-type Library {
-    id: ID!
-    name: String!
-    address: String!
-    books: [Book]
-}
-
-type Borrowing {
-    id: ID!
-    user: User!
-    book: Book!
-    borrowDate: String!
-    returnDate: String
-}
-
-enum UserRole {
-    READER
-    LIBRARIAN
-}
+#type Query {
+#    allBooks: [Book]
+#    bookById(id: ID!): Book
+#    booksByAuthor(author: String!): [Book]
+#    booksByTitle(title: String!): [Book]
+#    booksByPublicationYear(publicationYear: Int!): [Book]
+#    booksByAvailability(available: Boolean!): [Book]
+#
+#    allUsers: [User]
+#    userById(id: ID!): User
+#    userByEmail(email: String!): User
+#    usersByRole(role: UserRole!): [User]
+#
+#    allBorrowings: [Borrowing]
+#    borrowingById(id: ID!): Borrowing
+#    borrowingsByUser(userId: ID!): [Borrowing]
+#    borrowingsByBook(bookId: ID!): [Borrowing]
+#    borrowingsByActiveByUser(userId: ID!): [Borrowing]
+#
+#    allLibraries: [Library]
+#    libraryById(id: ID!): Library
+#    librariesByName(name: String!): [Library]
+#    librariesByAddress(address: String!): [Library]
+#}
+#
+#type Mutation {
+#    addBook(book: BookInput!): Book
+#    assignBookToLibrary(bookId: ID!, libraryId: ID!): Book
+#    deleteBook(id: ID!): Boolean
+#
+#    registerUser(user: UserInput!): User
+#    updateUser(id: ID!, user: UserInput!): User
+#    deleteUser(id: ID!): Boolean
+#
+#    addLibrary(library: LibraryInput!): Library
+#    updateLibrary(id: ID!, library: LibraryInput!): Library
+#    deleteLibrary(id: ID!): Boolean
+#
+#    borrowBook(userId: ID!, bookId: ID!): Borrowing
+#    returnBook(userId: ID!, bookId: ID!): Borrowing
+#}
+#
+#input BookInput {
+#    title: String!
+#    author: String!
+#    isbn: String!
+#    publicationYear: Int!
+#    available: Boolean!
+#}
+#
+#input UserInput {
+#    name: String!
+#    email: String!
+#    password: String!
+#    role: UserRole!
+#}
+#
+#input LibraryInput {
+#    name: String!
+#    address: String!
+#}
+#
+#type Book {
+#    id: ID!
+#    title: String!
+#    author: String!
+#    isbn: String!
+#    publicationYear: Int!
+#    available: Boolean!
+#    library: Library
+#    borrowings: [Borrowing]
+#}
+#
+#type User {
+#    id: ID!
+#    name: String!
+#    email: String!
+#    password: String!
+#    role: UserRole!
+#    borrowings: [Borrowing]
+#}
+#
+#type Library {
+#    id: ID!
+#    name: String!
+#    address: String!
+#    books: [Book]
+#}
+#
+#type Borrowing {
+#    id: ID!
+#    user: User!
+#    book: Book!
+#    borrowDate: String!
+#    returnDate: String
+#}
+#
+#enum UserRole {
+#    READER
+#    LIBRARIAN
+#}
