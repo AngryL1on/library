@@ -1,6 +1,6 @@
 package dev.angryl1on.library.core.services.impl;
 
-import dev.angryl1on.library.core.models.dtos.LibraryDTO;
+import dev.angryl1on.libraryapi.models.dtos.LibraryDTO;
 import dev.angryl1on.library.core.exceptions.LibraryNotFoundException;
 import dev.angryl1on.library.core.models.entity.Library;
 import dev.angryl1on.library.core.repositories.LibraryRepository;

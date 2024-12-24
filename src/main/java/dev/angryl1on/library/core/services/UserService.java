@@ -1,8 +1,8 @@
 package dev.angryl1on.library.core.services;
 
-import dev.angryl1on.library.core.models.dtos.UserDTO;
+import dev.angryl1on.libraryapi.models.dtos.UserDTO;
 import dev.angryl1on.library.core.exceptions.UserNotFoundException;
-import dev.angryl1on.library.core.models.entity.enums.UserRoles;
+import dev.angryl1on.libraryapi.models.entity.enums.UserRoles;
 
 import java.util.List;
 import java.util.UUID;

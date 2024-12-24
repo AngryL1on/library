@@ -1,13 +1,13 @@
 package dev.angryl1on.library.core.services.impl;
 
 import dev.angryl1on.library.core.exceptions.LibraryNotFoundException;
-import dev.angryl1on.library.core.models.dtos.BookDTO;
 import dev.angryl1on.library.core.exceptions.BookNotFoundException;
 import dev.angryl1on.library.core.models.entity.Book;
 import dev.angryl1on.library.core.models.entity.Library;
 import dev.angryl1on.library.core.repositories.BookRepository;
 import dev.angryl1on.library.core.repositories.LibraryRepository;
 import dev.angryl1on.library.core.services.BookService;
+import dev.angryl1on.libraryapi.models.dtos.BookDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -89,7 +89,6 @@ public class BookServiceImpl implements BookService {
 
         return modelMapper.map(book, BookDTO.class);
     }
-
 
     @Override
     public void deleteBook(UUID id) {

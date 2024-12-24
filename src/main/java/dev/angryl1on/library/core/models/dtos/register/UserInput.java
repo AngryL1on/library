@@ -1,6 +1,6 @@
 package dev.angryl1on.library.core.models.dtos.register;
 
-import dev.angryl1on.library.core.models.entity.enums.UserRoles;
+import dev.angryl1on.libraryapi.models.entity.enums.UserRoles;
 
 public class UserInput {
     private String name;

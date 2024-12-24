@@ -1,9 +1,9 @@
 package dev.angryl1on.library.core.services.impl;
 
-import dev.angryl1on.library.core.models.dtos.UserDTO;
+import dev.angryl1on.libraryapi.models.dtos.UserDTO;
 import dev.angryl1on.library.core.exceptions.UserNotFoundException;
 import dev.angryl1on.library.core.models.entity.User;
-import dev.angryl1on.library.core.models.entity.enums.UserRoles;
+import dev.angryl1on.libraryapi.models.entity.enums.UserRoles;
 import dev.angryl1on.library.core.repositories.UserRepository;
 import dev.angryl1on.library.core.services.UserService;
 import org.modelmapper.ModelMapper;

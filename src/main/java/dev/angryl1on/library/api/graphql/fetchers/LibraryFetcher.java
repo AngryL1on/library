@@ -1,7 +1,7 @@
 package dev.angryl1on.library.api.graphql.fetchers;
 
 import com.netflix.graphql.dgs.*;
-import dev.angryl1on.library.core.models.dtos.LibraryDTO;
+import dev.angryl1on.libraryapi.models.dtos.LibraryDTO;
 import dev.angryl1on.library.core.models.dtos.register.LibraryInput;
 import dev.angryl1on.library.core.services.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
